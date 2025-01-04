@@ -43,7 +43,7 @@ export const MagicLinkEmail = ({ url }: Props) => (
           </Text>
           <Text>
             Best,
-            <br />- Typebot Team.
+            <br />- Aritic.
           </Text>
         </MjmlColumn>
       </MjmlSection>
@@ -57,6 +57,6 @@ export const sendMagicLinkEmail = ({
 }: Pick<SendMailOptions, "to"> & ComponentProps<typeof MagicLinkEmail>) =>
   sendEmail({
     to,
-    subject: "Sign in to Typebot",
+    subject: "Sign in to Aritic Bot Module",
     html: render(<MagicLinkEmail {...props} />).html,
   });

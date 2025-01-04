@@ -26,19 +26,19 @@ interface Props {
 export const LoginCodeEmail = ({ url, code }: Props) => (
   <Html>
     <Head />
-    <Preview>Your login code for Typebot</Preview>
+    <Preview>Your login code for bot module</Preview>
     <Body style={main}>
-      <Container style={container}>
+      <Container style={container}> <div style={imgstyle}> 
         <Img
           src={`${env.NEXTAUTH_URL}/images/logo.png`}
           width="32"
-          height="32"
-          alt="Typebot's Logo"
+          height="60"
+          alt="AriticBot's Logo"
           style={{
             margin: "24px 0",
           }}
-        />
-        <Heading style={heading}>Your login code for Typebot</Heading>
+        /></div>
+        <Heading style={heading}>Your login code for bot module</Heading>
         <code style={codeStyle}>{code}</code>
         <Text style={paragraph}>
           This code will only be valid for the next 5 minutes.
@@ -47,14 +47,14 @@ export const LoginCodeEmail = ({ url, code }: Props) => (
           You can also sign in by <Link href={url}>clicking here</Link>.
         </Text>
         <Hr style={hr} />
-        <Text style={footerText}>Typebot - Build faster, Chat smarter</Text>
+        <Text style={footerText}>AriticBot - Build faster, Chat smarter</Text>
       </Container>
     </Body>
   </Html>
 );
 
 LoginCodeEmail.PreviewProps = {
-  url: "https://typebot.io",
+  url: "https://aritic.com",
   code: "654778",
 } as Props;
 
@@ -72,6 +72,10 @@ const container = {
   maxWidth: "560px",
 };
 
+const imgstyle = {
+ width: "100%",
+ background: "#4BACC6",
+};
 const heading = {
   fontSize: "24px",
   letterSpacing: "-0.5px",
@@ -115,6 +119,6 @@ export const sendLoginCodeEmail = async ({
 }: Pick<SendMailOptions, "to"> & ComponentProps<typeof LoginCodeEmail>) =>
   sendEmail({
     to,
-    subject: "Sign in to Typebot",
+    subject: "Sign in to Ariticbot Module",
     html: await render(<LoginCodeEmail {...props} />),
   });
