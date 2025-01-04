@@ -35,7 +35,7 @@ export const DashboardHeader = () => {
         h="16"
         maxW="1000px"
         flex="1"
-	style={{ display: 'none' }} // Add display: none here
+	style={{ display: 'none' }}
       >
         <Link href="/typebots" data-testid="typebot-logo">
           <EmojiOrImageIcon
